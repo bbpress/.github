@@ -1,0 +1,2 @@
+# .github
+bbPress GitHub Settings 
