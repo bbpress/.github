@@ -1,0 +1,17 @@
+name: Mirror bbPress
+on:
+  # Every 5 minute, uncomment once the SSH Key has been created
+  # schedule:
+  # - cron:  '*/5 * * * *'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: 'Mirror bbPress'
+      uses: wearerequired/git-mirror-action@master
+      env:
+        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+      with:
+        source-repo: 'git://bbpress.git.wordpress.org/'
+        destination-repo: 'git@github.com:bbpress/bbPress.git'
